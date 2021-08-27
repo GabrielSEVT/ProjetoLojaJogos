@@ -1,0 +1,82 @@
+﻿@model ProjetoLojaJogos.Models.Funcionario
+@{
+    ViewBag.Title = "Cadastro de Funcionarios";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+<fieldset class="formulario">
+    <legend>Cadastro realizado com sucesso</legend>
+    <div class="editor-label">
+        @Html.DisplayNameFor(model => model.Codigo)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Codigo)
+    </div>
+    <br>
+    <div class="editor-label">
+        @Html.DisplayNameFor(model => model.Nome)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Nome)
+    </div>
+    <br>
+    <div class="editor-field">
+        @Html.DisplayNameFor(model => model.Cpf)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Cpf)
+    </div>
+    <br>
+    <div class="editor-field">
+        @Html.DisplayNameFor(model => model.Rg)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Rg)
+    </div>
+    <br>
+    <div class="editor-field">
+        @Html.DisplayNameFor(model => model.DataNascimento)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.DataNascimento)
+    </div>
+    <br>
+    <div class="editor-label">
+        @Html.DisplayNameFor(model => model.Endereco)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Endereco)
+    </div>
+    <br>
+    <div class="editor-label">
+        @Html.DisplayNameFor(model => model.Celular)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Celular)
+    </div>
+    <br>
+    <div class="editor-field">
+        @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+    <br>
+    <div class="editor-label">
+        @Html.DisplayNameFor(model => model.Cargo)
+    </div>
+    <div class="editor-field">
+        @Html.DisplayFor(model => model.Cargo)
+    </div>
+    <br>
+
+    <p>@Html.ActionLink("Voltar", "Index", "Funcionario")</p>
+</fieldset>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval");
+    }
+}
+

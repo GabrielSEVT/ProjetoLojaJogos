@@ -1,0 +1,102 @@
+﻿@model ProjetoLojaJogos.Models.Funcionario
+@{
+    ViewBag.Title = "Cadastro de funcionários";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+<fieldset class="formulario">
+    <legend>@ViewBag.Message</legend>
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Codigo)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Codigo)
+        <br>
+        @Html.ValidationMessageFor(model => model.Codigo)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Nome)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Nome)
+        <br>
+        @Html.ValidationMessageFor(model => model.Nome)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Cpf)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Cpf)
+        <br>
+        @Html.ValidationMessageFor(model => model.Cpf)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Rg)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Rg)
+        <br>
+        @Html.ValidationMessageFor(model => model.Rg)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.DataNascimento)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.DataNascimento)
+        <br>
+        @Html.ValidationMessageFor(model => model.DataNascimento)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Endereco)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Endereco)
+        <br>
+        @Html.ValidationMessageFor(model => model.Endereco)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Celular)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Celular)
+        <br>
+        @Html.ValidationMessageFor(model => model.Celular)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Email)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Email)
+        <br>
+        @Html.ValidationMessageFor(model => model.Email)
+    </div>
+
+    <div class="editor-label">
+        @Html.LabelFor(model => model.Cargo)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(model => model.Cargo)
+        <br>
+        @Html.ValidationMessageFor(model => model.Cargo)
+    </div>
+    <br>
+
+    <input class="botaoCadastrar" type="submit" value="Cadastrar">
+</fieldset>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval");
+    }
+}
+
+
+
