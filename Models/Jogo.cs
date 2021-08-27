@@ -36,7 +36,8 @@ namespace ProjetoLojaJogos.Models
         public string Plataforma { get; set; }
 
         [Required(ErrorMessage = "Este campo é obrigatório")]
-        [StringLength(4, MinimumLength = 1)]
+        [StringLength(4, MinimumLength = 4)]
+        [RegularExpression(@"([0-9]{4})", ErrorMessage = "Insira um formato de ano valido. Ex 0000")]
         [Display(Name = "Ano de lançamento")]
         public string AnoLancamento { get; set; }
 
