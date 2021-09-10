@@ -18,10 +18,10 @@ namespace ProjetoLojaJogos.Models
 
         [Required(ErrorMessage = "Este campo é obrigatório")]
         [Display(Name = "CPF")]
-        [RegularExpression(@"([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11})", ErrorMessage = "Insira um formato de RG válido. Ex: 000.000.000-00")]
+        [RegularExpression(@"([0-9]{3}.[0-9]{3}.[0-9]{3}/[0-9]{2})|([0-9]{11})", ErrorMessage = "Insira um formato de CPF válido. Ex: 000.000.000/00")]
         public string Cpf { get; set; }
 
-        [RegularExpression(@"(^(\d{2}\x2E\d{3}\x2E\d{3}[-]\d{1})$|^(\d{2}\x2E\d{3}\x2E\d{3})$)", ErrorMessage = "Insira um formato de RG válido. Ex: 00.000.000-00")]
+        [RegularExpression(@"(^(\d{2}\x2E\d{3}\x2E\d{3}[-]\d{1})$|^(\d{2}\x2E\d{3}\x2E\d{3})$)", ErrorMessage = "Insira um formato de RG válido. Ex: 00.000.000-0")]
         [Required(ErrorMessage = "Este campo é obrigatório")]
         [Display(Name = "RG")]
         public string Rg { get; set; }

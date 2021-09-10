@@ -10,7 +10,7 @@ namespace ProjetoLojaJogos.Controllers
     public class JogoController : Controller
     {
         // GET: Jogo
-        public ActionResult Index()
+        public ActionResult Jogo()
         {
             ViewBag.Message = "Cadastro de jogos";
             var jogo = new Jogo();
@@ -19,7 +19,7 @@ namespace ProjetoLojaJogos.Controllers
 
         [HttpPost]
 
-        public ActionResult Index(Jogo jogo) 
+        public ActionResult Jogo(Jogo jogo) 
         {
             if (ModelState.IsValid) 
             {

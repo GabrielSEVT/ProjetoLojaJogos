@@ -16,7 +16,7 @@ namespace ProjetoLojaJogos.Models
 
         [Required(ErrorMessage = "Este campo é obrigatório")]
         [Display(Name = "CPF")]
-        [RegularExpression(@"([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11})", ErrorMessage = "Formato de CPF inválida")]
+        [RegularExpression(@"([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11})", ErrorMessage = "Formato de CPF inválido")]
         public string Cpf { get; set; }
 
         [Required(ErrorMessage = "Este campo é obrigatório")]

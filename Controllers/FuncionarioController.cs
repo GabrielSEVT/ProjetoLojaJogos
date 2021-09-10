@@ -10,7 +10,7 @@ namespace ProjetoLojaJogos.Controllers
     public class FuncionarioController : Controller
     {
         // GET: Funcionario
-        public ActionResult Index()
+        public ActionResult Funcionario()
         {
             ViewBag.Message = "Cadastro de funcionários";
             var funcionario = new Funcionario();
@@ -19,7 +19,7 @@ namespace ProjetoLojaJogos.Controllers
 
         [HttpPost]
 
-        public ActionResult Index(Funcionario funcionario)
+        public ActionResult Funcionario(Funcionario funcionario)
         {
             if (ModelState.IsValid) 
             {

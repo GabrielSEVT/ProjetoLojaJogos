@@ -10,7 +10,7 @@ namespace ProjetoLojaJogos.Controllers
     public class ClienteController : Controller
     {
         // GET: Cliente
-        public ActionResult Index()
+        public ActionResult Cliente()
         {
             ViewBag.Message = "Cadastro de clientes";
             var cliente = new Cliente();
@@ -19,7 +19,7 @@ namespace ProjetoLojaJogos.Controllers
 
         [HttpPost]
 
-        public ActionResult Index(Cliente cliente) 
+        public ActionResult Cliente(Cliente cliente) 
         {
             if (ModelState.IsValid) 
             {

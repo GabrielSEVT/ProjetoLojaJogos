@@ -166,12 +166,12 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\Cliente\Cliente.cshtml" />
     <Content Include="Views\Cliente\ResultCadCliente.cshtml" />
     <Content Include="Views\Index.cshtml" />
-    <Content Include="Views\Funcionario\Index.cshtml" />
+    <Content Include="Views\Funcionario\Funcionario.cshtml" />
     <Content Include="Views\Funcionario\ResultCadFuncionario.cshtml" />
-    <Content Include="Views\Jogo\Index.cshtml" />
+    <Content Include="Views\Jogo\Jogo.cshtml" />
     <Content Include="Views\Jogo\ResultCadJogo.cshtml" />
   </ItemGroup>
   <ItemGroup>
