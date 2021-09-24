@@ -4,33 +4,45 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ProjetoLojaJogos.Models;
+using ProjetoLojaJogos.Repositorio;
 
 namespace ProjetoLojaJogos.Controllers
 {
     public class ClienteController : Controller
     {
-        // GET: Cliente
         public ActionResult Cliente()
         {
-            ViewBag.Message = "Cadastro de clientes";
+            ViewBag.Message = "Cadastro de funcionários";
             var cliente = new Cliente();
-            return View();
+            return View(cliente);
         }
+
+        Acoes ac = new Acoes();
 
         [HttpPost]
-
-        public ActionResult Cliente(Cliente cliente) 
+        public ActionResult Cliente(Cliente cliente)
         {
-            if (ModelState.IsValid) 
+            try
             {
-                return View("ResultCadCliente", cliente);
+                if (ModelState.IsValid)
+                {
+                    ac.CadastrarCliente(cliente);
+                    return RedirectToAction("ClientesCadastrados");
+                }
+
+                return View(cliente);
             }
-            return View(cliente);
+            catch
+            {
+                return View("ClientesCadastrados");
+            }
         }
 
-        public ActionResult ResultCadCliente(Cliente cliente) 
+        public ActionResult ClientesCadastrados()
         {
-            return View(cliente);
+            var mostrarCliente = new Acoes();
+            var todosClientes = mostrarCliente.ListarCliente();
+            return View(todosClientes);
         }
     }
 }

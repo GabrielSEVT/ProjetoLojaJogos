@@ -4,33 +4,44 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ProjetoLojaJogos.Models;
+using ProjetoLojaJogos.Repositorio;
 
 namespace ProjetoLojaJogos.Controllers
 {
     public class JogoController : Controller
     {
-        // GET: Jogo
         public ActionResult Jogo()
         {
-            ViewBag.Message = "Cadastro de jogos";
             var jogo = new Jogo();
-            return View();
+            return View(jogo);
         }
+
+        Acoes ac = new Acoes();
 
         [HttpPost]
-
-        public ActionResult Jogo(Jogo jogo) 
+        public ActionResult Jogo(Jogo jogo)
         {
-            if (ModelState.IsValid) 
+            try
             {
-                return View("ResultCadJogo", jogo);
+                if (ModelState.IsValid)
+                {
+                    ac.CadastrarJogo(jogo);
+                    return RedirectToAction("JogosCadastrados");
+                }
+
+                return View(jogo);
             }
-            return View(jogo);
+            catch
+            {
+                return View("JogosCadastrados");
+            }
         }
 
-        public ActionResult ResultCadJogo(Jogo jogo) 
+        public ActionResult JogosCadastrados()
         {
-            return View(jogo);
+            var exibirJogo = new Acoes();
+            var todosJogos = exibirJogo.ListarJogo();
+            return View(todosJogos);
         }
     }
 }

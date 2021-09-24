@@ -1,10 +1,12 @@
 ﻿@model ProjetoLojaJogos.Models.Cliente
+
 @{
-    ViewBag.TiTle = "Cadastro de Clientes";
+    ViewBag.Title = "Cliente de clientes";
 }
 
 @using (Html.BeginForm())
 {
+    @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
     <fieldset class="formulario">
         <legend>@ViewBag.Message</legend>
@@ -66,8 +68,8 @@
         <input class="botaoCadastrar" type="submit" value="Cadastrar">
     </fieldset>
 
-    @section Scripts {
-        @Scripts.Render("~/bundles/jqueryval");
-    }
 }
 
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

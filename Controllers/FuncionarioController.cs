@@ -4,33 +4,46 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using ProjetoLojaJogos.Models;
+using ProjetoLojaJogos.Repositorio;
 
 namespace ProjetoLojaJogos.Controllers
 {
     public class FuncionarioController : Controller
     {
-        // GET: Funcionario
-        public ActionResult Funcionario()
+        public ActionResult Funcionario() 
         {
             ViewBag.Message = "Cadastro de funcionários";
             var funcionario = new Funcionario();
-            return View();
+            return View(funcionario);
+
         }
+
+        Acoes ac = new Acoes();
 
         [HttpPost]
-
-        public ActionResult Funcionario(Funcionario funcionario)
+        public ActionResult Funcionario(Funcionario funcionario) 
         {
-            if (ModelState.IsValid) 
+            try 
             {
-                return View("ResultCadFuncionario", funcionario);
+                if (ModelState.IsValid) 
+                {
+                    ac.CadastrarFuncionario(funcionario);
+                    return RedirectToAction("FuncionariosCadastrados");
+                }
+                return View(funcionario);
             }
-            return View(funcionario);
+
+            catch
+            {
+                return View("FuncionariosCadastrados");
+            }
         }
 
-        public ActionResult ResultCadFuncionario(Funcionario funcionario) 
+        public ActionResult FuncionariosCadastrados() 
         {
-            return View(funcionario);
+            var exibirFuncionario = new Acoes();
+            var todosFuncionarios = exibirFuncionario.ListarFuncionario();
+            return View(todosFuncionarios);
         }
     }
 }

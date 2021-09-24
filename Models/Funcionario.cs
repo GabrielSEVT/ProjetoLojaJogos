@@ -14,9 +14,6 @@ namespace ProjetoLojaJogos.Models
         public int Codigo { get; set; }
 
         [Required(ErrorMessage = "Este campo é obrigatório")]
-        public string Nome { get; set; }
-
-        [Required(ErrorMessage = "Este campo é obrigatório")]
         [Display(Name = "CPF")]
         [RegularExpression(@"([0-9]{3}.[0-9]{3}.[0-9]{3}/[0-9]{2})|([0-9]{11})", ErrorMessage = "Insira um formato de CPF válido. Ex: 000.000.000/00")]
         public string Cpf { get; set; }
@@ -27,26 +24,22 @@ namespace ProjetoLojaJogos.Models
         public string Rg { get; set; }
 
         [Required(ErrorMessage = "Este campo é obrigatório")]
+        public string Nome { get; set; }
+
+        [Required(ErrorMessage = "Este campo é obrigatório")]
         [Display(Name = "Data de nascimento")]
-        [DisplayFormat(DataFormatString = "{0:dd/mm/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public DateTime DataNascimento
         {
-            get
-            {
-                return this.dataNascimento.HasValue
-                    ? this.dataNascimento.Value
-                    : DateTime.Now;
-            }
-            set
-            {
-                this.dataNascimento = value;
-            }
+            get { return this.dataNascimento.HasValue ? this.dataNascimento.Value : DateTime.Now; }
+            set { this.dataNascimento = value; }
         }
         private DateTime? dataNascimento = null;
 
         [Required(ErrorMessage = "Este campo é obrigatório")]
-        [Display(Name = "Endereço")]
-        public string Endereco { get; set; }
+        [Display(Name = "E-mail")]
+        [RegularExpression(".+\\@.+\\..+", ErrorMessage = "Digite um e-mail válido")]
+        public string Email { get; set; }
 
         [Required(ErrorMessage = "Este campo é obrigatório")]
         [Display(Name = "Celular")]
@@ -56,9 +49,8 @@ namespace ProjetoLojaJogos.Models
         public string Celular { get; set; }
 
         [Required(ErrorMessage = "Este campo é obrigatório")]
-        [Display(Name = "E-mail")]
-        [RegularExpression(".+\\@.+\\..+", ErrorMessage = "Digite um e-mail válido")]
-        public string Email { get; set; }
+        [Display(Name = "Endereço")]
+        public string Endereco { get; set; }
 
         [Required(ErrorMessage = "Este campo é obrigatório")]
         public string Cargo { get; set; }

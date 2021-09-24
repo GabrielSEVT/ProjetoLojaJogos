@@ -16,24 +16,16 @@ namespace ProjetoLojaJogos.Models
 
         [Required(ErrorMessage = "Este campo é obrigatório")]
         [Display(Name = "CPF")]
-        [RegularExpression(@"([0-9]{3}.[0-9]{3}.[0-9]{3}-[0-9]{2})|([0-9]{11})", ErrorMessage = "Formato de CPF inválido")]
+        [RegularExpression(@"([0-9]{3}.[0-9]{3}.[0-9]{3}/[0-9]{2})|([0-9]{11})", ErrorMessage = "Formato de CPF inválido")]
         public string Cpf { get; set; }
 
         [Required(ErrorMessage = "Este campo é obrigatório")]
         [Display(Name = "Data de nascimento")]
-        [DisplayFormat(DataFormatString = "{0:dd/mm/yyyy}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy/MM/dd}", ApplyFormatInEditMode = true)]
         public DateTime DataNascimento
         {
-            get
-            {
-                return this.dataNascimento.HasValue
-                    ? this.dataNascimento.Value
-                    : DateTime.Now;
-            }
-            set
-            {
-                this.dataNascimento = value;
-            }
+            get { return this.dataNascimento.HasValue ? this.dataNascimento.Value : DateTime.Now; }
+            set { this.dataNascimento = value; }
         }
         private DateTime? dataNascimento = null;
 

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ProjetoLojaJogos.Models.Cliente>
+
+@{
+    ViewBag.Title = "Clientes Cadastrados";
+}
+
+<div class="container-lista-cadastro">
+<h2>Clientes Cadastrados</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar cliente", "Cliente")
+</p>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cpf)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DataNascimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Celular)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Endereco)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cpf)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataNascimento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Celular)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Endereco)
+            </td>
+            <td>
+                @Html.ActionLink("Alterar", "AltCliente", null, new { codCliente = item.Cpf }, new { @class = "btn btn-primary btn-xs btnAlterar" })
+                @Html.ActionLink("Deletar", "DelCliente", null, new { codCliente = item.Cpf }, new { @class = "btn btn-danger btn-xs btnDeletar" })
+            </td>
+        </tr>
+    }
+</table>
+</div>
+

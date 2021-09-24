@@ -84,3 +84,16 @@ C:\Users\gabri\source\repos\ProjetoLojaJogos\obj\Debug\ProjetoLojaJogos.csproj.C
 C:\Users\gabri\source\repos\ProjetoLojaJogos\obj\Debug\ProjetoLojaJogos.csproj.CopyComplete
 C:\Users\gabri\source\repos\ProjetoLojaJogos\obj\Debug\ProjetoLojaJogos.dll
 C:\Users\gabri\source\repos\ProjetoLojaJogos\obj\Debug\ProjetoLojaJogos.pdb
+C:\Users\gabri\source\repos\ProjetoLojaJogos\bin\MySql.Data.dll
+C:\Users\gabri\source\repos\ProjetoLojaJogos\bin\Google.Protobuf.dll
+C:\Users\gabri\source\repos\ProjetoLojaJogos\bin\Zstandard.Net.dll
+C:\Users\gabri\source\repos\ProjetoLojaJogos\bin\K4os.Compression.LZ4.Streams.dll
+C:\Users\gabri\source\repos\ProjetoLojaJogos\bin\BouncyCastle.Crypto.dll
+C:\Users\gabri\source\repos\ProjetoLojaJogos\bin\Ubiety.Dns.Core.dll
+C:\Users\gabri\source\repos\ProjetoLojaJogos\bin\System.Memory.dll
+C:\Users\gabri\source\repos\ProjetoLojaJogos\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\gabri\source\repos\ProjetoLojaJogos\bin\System.Buffers.dll
+C:\Users\gabri\source\repos\ProjetoLojaJogos\bin\K4os.Compression.LZ4.dll
+C:\Users\gabri\source\repos\ProjetoLojaJogos\bin\K4os.Hash.xxHash.dll
+C:\Users\gabri\source\repos\ProjetoLojaJogos\bin\System.Numerics.Vectors.dll
+C:\Users\gabri\source\repos\ProjetoLojaJogos\bin\MySql.Data.xml
